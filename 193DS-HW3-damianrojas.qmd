@@ -16,6 +16,9 @@ library(here)
 
 #store kelp data
 kelp <- read.csv("temp-kelp.csv")
+
+#store personal data
+walks <- read.csv("walks_data.csv")
 ```
 
 
