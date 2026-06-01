@@ -21,7 +21,14 @@ kelp <- read.csv("temp-kelp.csv")
 walks <- read.csv("walks_data.csv")
 ```
 
-
+## 1)
+### a)
+The appropriate tests we can run to test the strength of the relationship 
+between temperature and giant kelp frond elongation rate are a Pearson's 
+correlation test and a Spearman's rank correlation. 
+The differences between the two tests are that a Pearson's test observes the 
+strength between linear relationships while the Spearman's test observes the 
+strength between monotonic relationships that do not need to be linear 
 
 ```{r}
 #| echo: false
