@@ -1,0 +1,26 @@
+---
+title: "hw 3, env s 193ds"
+author: "Damian Rojas"
+format: pdf
+---
+
+
+```{r}
+#| label: set-up
+#| message: false
+#read packages
+library(tidyverse)
+library(janitor)
+library(here)
+
+
+#store kelp data
+kelp <- read.csv("temp-kelp.csv")
+```
+
+
+
+```{r}
+#| echo: false
+2 * 2
+```
