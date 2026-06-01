@@ -167,18 +167,29 @@ Scatterplot showing relationship between weather (in degrees Fahrenheit) and len
 An affective visualization for this project could look like the route of the walk I would take during the personal data project. I could differentiate the route tracking by altering line color/width depending on assignment due. I could also include red stop signs or another visualization to illustrate where the walks would typically get slowed down. 
 
 ### b)
-
 ![Hand drawn sketch for visualization]("sketch.png")
-
 ### c)
-
 ![affective sketch](affective-sketch.png)
 
 ### d)
 This piece shows the route of the walk I would take along with a display of the various different workloads I had while taking the walk. I was influenced by Jill Pelto's artwork displaying scenic backgrounds which provided information to the data she was displaying. I took inspiration by displaying (albeit not art) the route to help show the visualization of work due and walk time. The process for my draft was simply taking a screenshot of the route (for simplicty) and adding the various lines (with different colors and shape) to help differentiate between the various workloads.
+
+### e
+
+[Link to slideshow for workshop 9](https://docs.google.com/presentation/d/1W-7N719fpjKY1VEMDflck1dq21luE54DFsHIdwa5fT0/edit?usp=sharing)
 
 # 4
 ### a)
 
 The test the authors selected was a t-test, more specficially for this article the test is an unpaired Welch's two-sample t test.
 The response variable for this experiment is the AQI (air quality index) of 4 sites encompassing major cities in India (ITO-Delhi, Worli-Mumbai, Jadavpur-Kolkata, and Manali Villiage-Chennai) while the predictor variable is COVID-19 lockdown confinement (Reduced human activity).
+
+![Welch's two-sample t test analysis From: Air quality assessment among populous sites of major metropolitan cities in India during COVID-19 pandemic confinement](t-test-table.png)
+### b)
+The table shows the data in a clear way, however if you are just reading the table without looking at the article it is hard to comprehend. The table does not share what the values mean in regards to the article, but they just show what the values are. 
+
+### c)
+The authors handled visual clutter very well for the table. There is bolded text reference table number and table title, along with what the values of the table represent. Everything is spaced out very well making the data very easy to read.
+
+### d)
+As referenced in part B, the table data is not very clear.The mean AQI is listed as mean, however if you had not read the article you would not be able to tell what the mean is referencing. WHen looking back on the table for this assignment I asked myself "mean what?" which shows how the table does not stand on its own. 
