@@ -28,9 +28,20 @@ between temperature and giant kelp frond elongation rate are a Pearson's
 correlation test and a Spearman's rank correlation. 
 The differences between the two tests are that a Pearson's test observes the 
 strength between linear relationships while the Spearman's test observes the 
-strength between monotonic relationships that do not need to be linear 
+strength between monotonic relationships that do not need to be linear. 
+
+## 1b) Visualizations
 
 ```{r}
 #| echo: false
-2 * 2
+
+ggplot(kelp, mapping = aes( x = temp_c, y = kelp_elong)) +
+# base ggplot
+geom_point(color = "pink3", size = 3) +
+  labs( x = "Temperature (Celsius)", 
+        y = "Kelp Length (cm)") +
+  theme_linedraw()
+
+
+
 ```
