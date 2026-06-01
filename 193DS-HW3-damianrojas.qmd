@@ -30,7 +30,7 @@ The differences between the two tests are that a Pearson's test observes the
 strength between linear relationships while the Spearman's test observes the 
 strength between monotonic relationships that do not need to be linear. 
 
-## b) Visualizations
+### b) Visualizations
 
 ```{r}
 #| echo: false
@@ -51,7 +51,7 @@ geom_point(color = "pink3", size = 3)+
 ```
 
 
-## c) Checking Assumptions / Run test
+### c) Checking Assumptions / Run test
 
 ```{r}
 #| label: assumptions
@@ -80,10 +80,26 @@ Checked normality, homoscedasticity, and any outliers of data with summary plots
 #| label: test
 #pearsons cor test is the method for linear models
 #run test with x as kelp elongation, y as temp, method as pearson
-cor.test(x = kelp$kelp_elong, y = kelp$temp_c, method = "pearson")
+cor.test(x = kelp$temp_c, y = kelp$kelp_elong, method = "pearson")
 ```
 
 
-## d)
+### d)
 To evaluate the strength of the relationship between temperature and giant kelp frond elongation rate, I used a Pearson's correlation test. 
-We found a strong negative relationship between kelp elongation and temperature (Pearson's r = -0.69, t(30) = -5.19, p < 0.001), where temperature significantly predicted kelp elongation length (R^2^ = 0.476).
+We found a strong negative relationship between kelp elongation and temperature (Pearson's r = -0.69, t(30) = -5.19, p < 0.001), where temperature significantly predicted kelp elongation length (R^2^ = 0.476). We reject the null hypothesis due to the p-value being less than $/alpha$/ = 0.05.
+
+### e)
+The Pearson's correlation shows a statistically significant negative relationship between kelp elongation and temperature. This shows that an increase in ocean or seawater temperature causes kelp growth to stunt, leading to shorter kelp within these affected regions. Further implications of this phenomena may lead to giant kelp height remaining at these shortened heights unless resistant regions are studied and found to have any possible mediation for non-resistant groups. 
+
+### f) 
+
+```{r}
+#run spearmans rank test
+cor.test( x = kelp$temp_c, y = kelp$kelp_elong, method = "spearman")
+
+```
+
+The Spearman's test shows the same p-val as the Pearson's test leading me to the same conclusion (rejecting the null hypothesis). The change in test type keeps me from claiming a linear relationship due to the restrictions behind a Spearman's test. 
+
+## 2a) Personal Data
+
