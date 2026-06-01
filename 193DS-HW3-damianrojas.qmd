@@ -36,12 +36,44 @@ strength between monotonic relationships that do not need to be linear.
 #| echo: false
 
 ggplot(kelp, mapping = aes( x = temp_c, y = kelp_elong)) +
-# base ggplot
-geom_point(color = "pink3", size = 3) +
+# base ggplot, change color and size 
+# of points
+geom_point(color = "pink3", size = 3)+
+#change x-axis to temp(celsius) 
+#change y to kelp length (cm)  
   labs( x = "Temperature (Celsius)", 
         y = "Kelp Length (cm)") +
+  #change theme from base
   theme_linedraw()
 
 
 
 ```
+
+
+## 1c) Checking Assumptions / Run test
+
+```{r}
+#| label: assumptions
+
+#create linear model for kelp data
+kelp_model <- lm (kelp_elong ~ temp_c, data = kelp)
+#kelp elongation as function of temp
+#summary plots of kelp model
+plot (kelp_model) +
+  #plotted as 2x2 grid
+par(mfrow = c(2,2))
+
+```
+
+Checked normality, homoscedasticity, and any outliers of data with summary plots. Found to be normal, linear, with no outliers affecting data. 
+
+```{r}
+#| label: test
+#spearmans rank test is the method for linear models
+#recall data)
+cor.test(x = kelp$kelp_elong, y = kelp$temp_c, method = "pearson")
+```
+
+
+
