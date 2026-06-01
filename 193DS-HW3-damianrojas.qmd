@@ -21,8 +21,8 @@ kelp <- read.csv("data/temp-kelp.csv")
 walks <- read.csv("data/walks_data.csv")
 ```
 
-## 1)
-### a)
+# 1)
+## a)
 The appropriate tests we can run to test the strength of the relationship 
 between temperature and giant kelp frond elongation rate are a Pearson's 
 correlation test and a Spearman's rank correlation. 
@@ -30,7 +30,7 @@ The differences between the two tests are that a Pearson's test observes the
 strength between linear relationships while the Spearman's test observes the 
 strength between monotonic relationships that do not need to be linear. 
 
-### b) Visualizations
+## b) Visualizations
 
 ```{r}
 #| echo: false
@@ -51,7 +51,7 @@ geom_point(color = "pink3", size = 3)+
 ```
 
 
-### c) Checking Assumptions / Run test
+## c) Checking Assumptions / Run test
 
 ```{r}
 #| label: assumptions
@@ -84,14 +84,14 @@ cor.test(x = kelp$temp_c, y = kelp$kelp_elong, method = "pearson")
 ```
 
 
-### d)
+## d)
 To evaluate the strength of the relationship between temperature and giant kelp frond elongation rate, I used a Pearson's correlation test. 
-We found a strong negative relationship between kelp elongation and temperature (Pearson's r = -0.69, t(30) = -5.19, p < 0.001), where temperature significantly predicted kelp elongation length (R^2^ = 0.476). We reject the null hypothesis due to the p-value being less than $/alpha$/ = 0.05.
+We found a strong negative relationship between kelp elongation and temperature (Pearson's r = -0.69, t(30) = -5.19, p < 0.001), where temperature significantly predicted kelp elongation length (R^2^ = 0.476). We reject the null hypothesis due to the p-value being less than $\alpha$ = 0.05.
 
-### e)
+## e)
 The Pearson's correlation shows a statistically significant negative relationship between kelp elongation and temperature. This shows that an increase in ocean or seawater temperature causes kelp growth to stunt, leading to shorter kelp within these affected regions. Further implications of this phenomena may lead to giant kelp height remaining at these shortened heights unless resistant regions are studied and found to have any possible mediation for non-resistant groups. 
 
-### f) 
+## f) 
 
 ```{r}
 #run spearmans rank test
@@ -101,5 +101,62 @@ cor.test( x = kelp$temp_c, y = kelp$kelp_elong, method = "spearman")
 
 The Spearman's test shows the same p-val as the Pearson's test leading me to the same conclusion (rejecting the null hypothesis). The change in test type keeps me from claiming a linear relationship due to the restrictions behind a Spearman's test. 
 
-## 2a) Personal Data
+# 2a) Personal Data
 
+```{r}
+#from HW 2
+walks |> 
+mutate(work_due = as_factor(work_due))
+       #factor so data is listed in order of appearance, cleans up repeats
+#create graph, start with gg plot as base layer
+# x = categorical predictor
+ggplot(walks, aes(x = work_due, 
+# y = response variable (in seconds to avoid graph looking skewed)
+                  y = walk_time_s)) +
+# scatter plot to compare relationship between predictor and response variable
+geom_jitter(height = 0,
+            width = 0,
+            shape = 16,
+            size=5,
+#change color
+           color="purple4") +
+                        
+#label graph
+labs(title="Workload vs Walk time", 
+     x = "Assignments due(#)",
+     y = "Length of walk (sec)") +
+#change theme
+theme_linedraw()
+
+```
+### Fig 1
+Scatterplot showing relationship between number of assignments due and length of walk in seconds. Each data point is represented by a purple point. 
+
+```{r}
+
+#from HW2 to show potential relationship between degrees and walk time
+#collect personal data
+walks |> 
+
+mutate(WEATHER_F = as_factor(WEATHER_F))
+
+#create graph, start with gg plot as base layer
+#x=continuous predictor, weather
+#y= length of walk
+#take degrees F ofdatqa sheet, abel in axis
+ggplot(walks, aes(x = WEATHER_F, 
+                  y = walk_time_s)) +
+#scatter plot to compare relationship between continuous predictor and response 
+geom_point(color="green3", size = 5) +
+
+#label graph
+labs(title = "Weather vs Walk Time", 
+     x = "Weather(°F)", 
+     y = "Length of Walk (sec)") +
+
+#change theme
+theme_bw()
+
+```
+### Fig 2
+Scatterplot showing relationship between weather (in degrees Fahrenheit) and length of walk (in seconds) with each green point representing an individual walk. 
