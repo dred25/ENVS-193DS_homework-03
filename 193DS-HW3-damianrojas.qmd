@@ -15,10 +15,10 @@ library(here)
 
 
 #store kelp data
-kelp <- read.csv("temp-kelp.csv")
+kelp <- read.csv("data/temp-kelp.csv")
 
 #store personal data
-walks <- read.csv("walks_data.csv")
+walks <- read.csv("data/walks_data.csv")
 ```
 
 ## 1)
@@ -30,7 +30,7 @@ The differences between the two tests are that a Pearson's test observes the
 strength between linear relationships while the Spearman's test observes the 
 strength between monotonic relationships that do not need to be linear. 
 
-## 1b) Visualizations
+## b) Visualizations
 
 ```{r}
 #| echo: false
@@ -51,18 +51,26 @@ geom_point(color = "pink3", size = 3)+
 ```
 
 
-## 1c) Checking Assumptions / Run test
+## c) Checking Assumptions / Run test
 
 ```{r}
 #| label: assumptions
+#| fig-height: 8
+#| fig-width: 6
 
 #create linear model for kelp data
 kelp_model <- lm (kelp_elong ~ temp_c, data = kelp)
+
+#show lm for kelp
+kelp_model
 #kelp elongation as function of temp
-#summary plots of kelp model
-plot (kelp_model) +
-  #plotted as 2x2 grid
-par(mfrow = c(2,2))
+#
+#plotted as 2x2 grid
+ par(mfrow = c(2,2))
+ #summary plots of kelp model
+plot (kelp_model) 
+ 
+
 
 ```
 
@@ -70,10 +78,12 @@ Checked normality, homoscedasticity, and any outliers of data with summary plots
 
 ```{r}
 #| label: test
-#spearmans rank test is the method for linear models
-#recall data)
+#pearsons cor test is the method for linear models
+#run test with x as kelp elongation, y as temp, method as pearson
 cor.test(x = kelp$kelp_elong, y = kelp$temp_c, method = "pearson")
 ```
 
 
-
+## d)
+To evaluate the strength of the relationship between temperature and giant kelp frond elongation rate, I used a Pearson's correlation test. 
+We found a strong negative relationship between kelp elongation and temperature (Pearson's r = -0.69, t(30) = -5.19, p < 0.001), where temperature significantly predicted kelp elongation length (R^2^ = 0.476).
