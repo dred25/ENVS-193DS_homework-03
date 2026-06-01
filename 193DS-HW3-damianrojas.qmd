@@ -130,7 +130,7 @@ theme_linedraw()
 
 ```
 ### Fig 1
-Scatterplot showing relationship between number of assignments due and length of walk in seconds. Each data point is represented by a purple point. 
+Scatterplot showing relationship between number of assignments due and length of walk in seconds. Each data point is represented by a purple point (n = 16). 
 
 ```{r}
 
@@ -158,5 +158,27 @@ labs(title = "Weather vs Walk Time",
 theme_bw()
 
 ```
+
 ### Fig 2
-Scatterplot showing relationship between weather (in degrees Fahrenheit) and length of walk (in seconds) with each green point representing an individual walk. 
+Scatterplot showing relationship between weather (in degrees Fahrenheit) and length of walk (in seconds) with each green point representing an individual walk (n=16). 
+
+# 3
+### a)
+An affective visualization for this project could look like the route of the walk I would take during the personal data project. I could differentiate the route tracking by altering line color/width depending on assignment due. I could also include red stop signs or another visualization to illustrate where the walks would typically get slowed down. 
+
+### b)
+
+![Hand drawn sketch for visualization]("sketch.png")
+
+### c)
+
+![affective sketch](affective-sketch.png)
+
+### d)
+This piece shows the route of the walk I would take along with a display of the various different workloads I had while taking the walk. I was influenced by Jill Pelto's artwork displaying scenic backgrounds which provided information to the data she was displaying. I took inspiration by displaying (albeit not art) the route to help show the visualization of work due and walk time. The process for my draft was simply taking a screenshot of the route (for simplicty) and adding the various lines (with different colors and shape) to help differentiate between the various workloads.
+
+# 4
+### a)
+
+The test the authors selected was a t-test, more specficially for this article the test is an unpaired Welch's two-sample t test.
+The response variable for this experiment is the AQI (air quality index) of 4 sites encompassing major cities in India (ITO-Delhi, Worli-Mumbai, Jadavpur-Kolkata, and Manali Villiage-Chennai) while the predictor variable is COVID-19 lockdown confinement (Reduced human activity).
